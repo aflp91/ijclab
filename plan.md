@@ -1,6 +1,6 @@
 # Plan du rapport d'activité
 
-## Contexte
+1. ## Contexte
 
 ## Besoins
 
