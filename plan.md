@@ -16,25 +16,25 @@
 * L'organisation du travail
 ## Le résultat
 * L'architecture
-## FRONT-END
+### Front-End
 * La conception
 * Les composants (architecture, graphismes et fonctionnalités)
 * Les services (authentification, tri par étiquettes)
 * Les technologies clées (Vue.js, Webpack, Node.js)
 * Les tests unitaires
-## Back-END
+### Back-End
 * FLask
-### CodeGuards
+#### CodeGuards
 * Les fonctionnalités
 *Flask_login
-### LabelsTower
+#### LabelsTower
 *Les foncitionnalités
 *Le système de tri par étiquettes
-### CodingPool
+#### CodingPool
 * L'intégration des blueprint CodeGuards et LabelsTower
 * Les fonctionnalités hors blueprint
 * La base de données
-### Les tests avec DocTest
+#### Les tests avec DocTest
 ## Reproductibilité, portabilité, partage du code
 * Docker
 * Git
