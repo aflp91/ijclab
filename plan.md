@@ -1,41 +1,45 @@
 # Plan du rapport d'activité
 
-## Contexte
-* Laboratoire
-* Service informatique
-* Mission
-## Besoins
-* Généraux
-* En terme de fonctionnalité
-## L'existant
-* Ceux qui a été fait
-* Les technologies utilisées
-* L'architecture
-## Gestion de projet
+## Contexte (2pp)
+* Le laboratoire
+* Le service informatique
+* Ma mission
+## Besoins (1pp)
+* Définition des besoins
+## L'existant (2pp)
+* Ceux qui a été fait avant ma mission d'alternant
+## Gestion de projet (1pp)
 * Ceux qu'il reste à faire
 * L'organisation du travail
-## Le résultat
-* L'architecture
-### Front-End
-* La conception
+## Le résultat (1pp)
+* Présentation du système
+### Front-End (1pp)
+* Vue.js
+#### Conception (1pp)
+* La méthode AGILE centré utilisateur
+* Les maquettes
+#### CodingPool (2pp)
 * Les composants (architecture, graphismes et fonctionnalités)
 * Les services (authentification, tri par étiquettes)
-* Les technologies clées (Vue.js, Webpack, Node.js)
-* Les tests unitaires
-### Back-End
+#### Test (1pp)
+* Tests unitaires
+### Back-End (1pp)
 * FLask
-#### CodeGuards
-* Les fonctionnalités
-*Flask_login
-#### LabelsTower
-*Les foncitionnalités
-*Le système de tri par étiquettes
-#### CodingPool
-* L'intégration des blueprint CodeGuards et LabelsTower
+#### CodeGuards (2pp)
+* Le système d'authentification
+#### LabelsTower (2pp)
+* Le système de tri par étiquettes
+#### CodingPool (2pp)
+* La distribution et l'intégration des blueprint CodeGuards et LabelsTower
 * Les fonctionnalités hors blueprint
 * La base de données
-#### Les tests avec DocTest
-## Reproductibilité, portabilité, partage du code
+#### Test (1pp)
+* Tests unitaires
+## Reproductibilité, portabilité, partage du code (2pp)
 * Docker
 * Git
-## Bilan de l'apprentissage
+* GitLab
+* CI
+## Bilan de l'apprentissage (1pp)
+* Le savoir faire
+* Le savoir être
