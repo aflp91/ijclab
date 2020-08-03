@@ -3,11 +3,11 @@
 ## Contexte (2pp)
 * Le laboratoire
 * Le service informatique
-* Ma mission
-## Besoins (1pp)
-* Définition des besoins
+* CodingPool et PSPA
 ## L'existant (2pp)
 * Ceux qui a été fait avant ma mission d'alternant
+## Besoins (1pp)
+* Définition des besoins
 ## Gestion de projet (1pp)
 * Ceux qu'il reste à faire
 * L'organisation du travail
