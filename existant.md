@@ -26,3 +26,24 @@ inscription connexion
 plan
 descriptions
 critiques 
+
+Fonctionnalités :
++ interdir un label
++ obliger un label
++ filtrer les tutoriels
++ créer un compte utilisateur
+* se connecter à son compte utilisateur
++ modifier la hierarchie des labels
++ ajouter un tutoriel
++ associer des utilisateurs aux rôles de comtribueur (prescriber), préparateur (preparator), demandeur (requestor)
++ associer un statut à l'élément ajouté 
++ associer un ou plusieurs labels à un tutoriel
++ gestion du statut non authentifié
++ gestion du statut d'admin
+- envoie d'e-mail
+- gestion du statut authentifié
+
+interface utilisateur:
++ recherche graphique autour du thème de la piscine
++ fluidité de l'application
++ message d'information de l'API
