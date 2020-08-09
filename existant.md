@@ -24,8 +24,9 @@ CodingPool est une application monopage CLIENT/SERVEUR. Elle délivre un ensembl
 Ces services sont dit asynchrones car il requière une communication entre le CLIENT (ex. IE, FireFox, Safari)
 et le SERVEUR (ex. APACHE, NGX). Un échange de données est fait entre les deux entités. Le CLIENT envoie une 
 requête au SERVEUR qui répondra à la demande du client selon un plan prédéfini.
-Contrairement au application WEB classique, le serveur ne renvoie pas de page HTML mais des données sous le 
-format JavaScript Object Notation (JSON).L'application cliente se met à jour lorsqu'elle reçoit les données.
+Contrairement au application WEB classique, le serveur ne renvoie pas uniquement des pages HTML mais aussi des 
+données sous le format JavaScript Object Notation (JSON). L'application cliente se met à jour lorsqu'elle reçoit 
+les données.
 Le temps de communication entre le CLIENT et le SERVEUR est variable. L'ordre de grandeur est de quelques 
 milisecondes à une dizaine de milisecondes. Ce qui est satisfaisant car peu ou pas visible à l'oeil nu.
 Le client intéroge le serveur pour obtenir des informations sur la base de données :
@@ -58,6 +59,20 @@ cette implémentation n'a pas d'effet délétaire sur les perfomances d'une appl
 et une base de données relativement vide.
 
 
+travail à implémenter :
+-l'existant n'utilse pas assez les composants vuejs. Les composants pourraient-être décomposés en sous composants
+ indépendants. Regrouper le code en sous composants indépendants augmente la lisibilité, la maintenabilité et 
+ la réutilisabilité du code. Les composants existants sont des sortes de couteaux suisses et leur rôle devient
+ incertain. Par exemple, le panneau des résultats affiche les résultats du filtrages des tutoriels, 
+ les publications de chaque utilisateur, les formiulaires de connexion et inscription.
+ Chacun de ces exemples nécessiterait un composant à part entière. L'implémentation existante n'est pas adapté
+ à la conception de l'application monopage qui doit afficher diverse éléments dans une même partie de l'interface
+ graphique (panneau des résultat). L'implémentation a accumulé un grand nombre de rendu conditionnelle sur un même
+ composant. Par la suite d'autre fonctionnalité devaient apparaitre dans cette même partie de l'interface mais 
+ le développeur à choisi d'abandonner le rendu conditionnel et à créer une nouvelle page html. Le principe 
+ d'application monopage n'était plus respecté.
+
+ -utilisation d'une API 
 
 Fonctionnalités :
 + interdir un label
