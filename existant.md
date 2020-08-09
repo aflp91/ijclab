@@ -72,7 +72,21 @@ travail à implémenter :
  le développeur à choisi d'abandonner le rendu conditionnel et à créer une nouvelle page html. Le principe 
  d'application monopage n'était plus respecté.
 
- -utilisation d'une API 
+ -L'API permet au client de créer, mettre à jour ou récupérer des données sur le serveur. 
+  Ces données concernent différents objet conceptuel de l'application codingpool : 
+  les étiquettes, les tutoriels, les utilisateur.
+  Les données sont renvoyés dans le format JavaScript Notation Object (JSON). Ce format est 
+  directement interprétable par le viewModel qui sert à afficher des variables dans la page HTML.
+  L'API évite le rafraichissement total de la page. Les quantités de données échangé entre le serveur et le 
+  client diminue et ainsi les performances de vitesse de réaction de l'application augmentes.
+  Cependant ces échanges de données ont tout de même un coup sur la performance. Il est donc préférable de 
+  diminuer ces échanges au strict minimum. Malheuresement l'existant échange des données avec le serveur 
+  constament. L'implémentation du design partern store serait bien adapté au filtrage des tutoriels qui 
+  représente la plupart des échanges avec le serveur. Ce design partern consiste à récupérer toutes les
+  données du serveur afin de les traités sur le client. Nous pourrions donc récupérer tout les tutoriels et
+  étiquettes pour implémenter un filtrage local qui ne bloquerait pas le serveur.
+  Ce design patern a des inconvénients. Le téléchargement de l'ensemble des données du serveur peut-être long
+  et les données téléchargées sur le client peuvent ne plus être à jour. 
 
 Fonctionnalités :
 + interdir un label
