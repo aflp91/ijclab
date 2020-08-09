@@ -88,6 +88,13 @@ travail à implémenter :
   Ce design patern a des inconvénients. Le téléchargement de l'ensemble des données du serveur peut-être long
   et les données téléchargées sur le client peuvent ne plus être à jour. 
 
+-A l'origine codingpool devait réutiliser un projet, labelstower, qui implémente le système de tri par étiquette.
+ Au cours du développement labelstower a fusionné avec codingpool. Les fonctionnalités de labelstower n'était
+ plus distingeable du reste de l'application. Nous devrons donc isolé les fonctionnalités du tri par étiquette et
+ le distribuer sous la forme d'un module python.  
+ Dans le contexte de création de module nous avons décidé d'isolé le front du back. L'interface graphique étant 
+ propre à chaque projet l'intérêt de distribuer une interface avec la distribution labelstower est nulle.
+
 Fonctionnalités :
 + interdir un label
 + obliger un label
