@@ -69,6 +69,17 @@ travail à implémenter :
  Dans le contexte de création de module nous avons décidé d'isolé le front du back. L'interface graphique étant 
  propre à chaque projet l'intérêt de distribuer une interface avec la distribution labelstower est nulle.
 
+ -L'existant propose déjà une charte graphique élaborer sur le de la piscine ainsi qu'une structure globale de
+ l'interface graphique. Nous pourrons réutiliser la charte graphique ainsi que la structure proposée.
+
+ -La base de données de l'application existante n'est pas une base de données relationnelle. Elle n'utilise pas 
+ les contraintes de clés étrangères. Le schéma de la base de données devra intégrer la contrainte de clé étrnagère
+ pour garantir la pertinence des données. Par ailleurs, la base de données contient des informations qu'il faudra 
+ intégrer à la nouvelle base de données.
+
+ -On remarque l'absence de test unitaire. Les tests unitaires garantisse la non régréssion du code. Il servent 
+  également de documentation. 
+
 Fonctionnalités :
 + interdir un label
 + obliger un label
@@ -90,6 +101,12 @@ interface utilisateur:
 + recherche graphique autour du thème de la piscine
 + fluidité de l'application
 + message d'information de l'API
+
+Codeguards est une application WEB de démonstration de fonctionnement du module d'authentification flask_login.
+
+Fonctionnalités existantes :
++création d'un compte utilsateur
+
 
 
 GLOSSAIRE : 
