@@ -104,11 +104,98 @@ interface utilisateur:
 
 Codeguards est une application WEB de démonstration de fonctionnement du module d'authentification flask_login.
 
-Fonctionnalités existantes :
-+création d'un compte utilsateur
 
+Codeguards est une application WEB de démonstration. Elle implémente un certain nombre de fonctionnalités liés
+au compte utilisateur :
+Fonctionnalités existantes :
++ créer un compte utilsateur
++ se connecter/déconnecter d'une session utilisateur
++ envoyer un courrier électronique
++ authentifier un mail utilisateur
++ créer, supprimer, modifier un blog
++ afficher les posts
+- rôles utilisateursle principe de compte utilisateur
+
+Cette application de démonstration doit-être réutiliser pour construire un système d'authentification 
+multi-utilisateurs sur deux applications WEB du laboratoire : CodingPool et PSPA.
+
+Pour rendre l'application de démonstration réutilisable les services rendu par l'application de démonstration 
+doivent pouvoir être rendu sous la forme de microservice auquel n'importe quelle application pourrait avoir 
+accès via le protocole http.
+
+Pour trasformer l'application de démonstration en micro service nous proposons de distribuer les fonctionnalités 
+sous la forme d'une blueprint, codegiards. Cette blueprint pourra être enregistré dans n'importe quelle application
+Flask qui souhaite proposer un système d'authentification à ses utilisateurs.
+
+Les utilisateurs sont enregistrés sur une base de données. Lorsq'un utilisateur souhaite se connecter à son compte
+utilisateur, il pourra y accèder en s'identifiant grâce à son mail et mot de passe.
+
+Un utilisateur porte les caractristique suivante : id, username, mail, password, authenticated.
+
+-L'application n'est pas fonctionnelle. login_manager n'est pas implémenté.
+
+-L'aplication CodeGuards suit l'architecture CLIENT/SERVEUR. Le serveur 
+
+ -Il existe trois statuts d'utilisateur
+  enregistrés : l'utilisateur a été enregistré dans la base de données.
+  authentifiés : l'utilisateur a authentifié son adresse électronique
+  administrateurs : l'utilisateur fait parti de la liste des administrateurs.
+  Pour rendre plus explicite les différents rôles de l'utilisateur, nous allons les formaliser dans la 
+  base de données. Chaque utilisateur sera associé à un rôle qui évoluera. Des droits d'accès seront 
+  attribuées à chacun de ces groupes.
+
+
+-Démarrage de l'application avec un environnemeent virtuel.
+
+-dépendance : flask, flask-mail, jinja, flask-login, chryptography, sqlalchemy
+
+-base de données : post, user
+
+-blueprint : auth, 
+
+-cli (init_db)
 
 
 GLOSSAIRE : 
 -application monopage
 -design patern store
+
+CodingPool est une application WEB créer par Cyril Mammar et David Chamont entre 2017-2018.
+Elle est constitué d'une interface utilisateur écrite en Vue.js, un Framework javascript, et
+d'un back-end Flask, un Framework Python.
+L'interface nous transporte à la piscine grâce à plusieurs élements graphiques faisant référence
+à cet univers : fond de picine carlé, nageur, plongeur, noyer, bouées(Cf. images). 
+L'interface a été conçu pour être simple et facile d'accès. Elle est constitué d'un bandeau
+supérieur qui comprends le titre de l'application, CodingPool, et des bouées anglais, français.
+Ci-dessous le panneaux de labels et de résultats contenant respectivement des étiquettes et des 
+tutoriels. Enfin un bandeau inféreur situé en dessous des panneaux est constitué d'un texte 
+d'information sur le projet et ces acteurs ainsi que du menu de navigation incluant les items : 
+"Inscription" et "Connexion".
+L'utilisateur peut interagir avec l'ensemble de ses éléments graphiques grâce à la souris. Nous 
+détaillerons l'ensemble des interactions ci-après. Nous reviendrons également sur les panneaux
+de labels et résultats peu détaillé jusqu'à présent.
+Le bandeau supérieur offre des contrôles qui agissent sur l'ensemble de la page.
+L'utilisateur peut rafraichir la page ou modifier la langue du site en cliquant respectivement
+sur le titre ou les bouées américaines et française.
+Les panneaux de labels et résultats sont les principaux éléments de l'interface.
+Le panneaux de labels est constitué d'une liste d'étiquettes sélectionnables. Chaque étiquette
+porte un nom et est sélectionnable en cliquant sur l'image du nageur ou du noyer. L'image du 
+nageur permet de rendre obligatoire l'étiquette sélectionnée tandis que l'image du noyer interdit
+l'étiquette sélectionnée.
+Les sélections de l'utilisateur apparaissent dans une liste, la liste des étiquette sélectionnées,
+au-dessus de la liste des étiquettes sélectionnables. Chaque étiquette sélectionnée porte un nom et
+l'image correspondant au type de sélection. Les étiquettes sélectionnées sont déselectionnées en 
+cliquant sur l'image du nageur pour les étiquettes rendu obligatoire ou en cliquant sur l'image du 
+noyer pour les étiquettes interdites.
+Le panneau de résultats est polymorphe. Par défaut c'est la liste des tutoriels résultant des 
+opérations de filtrage effectué avec les étiquettes du panneau de labels. Regardons de plus près
+la constitutions d'un tutoriel dans un premier temps puis nous nous interesserons aux différents 
+résultats affichés dans le panneau de résultats par la suite.
+Chaque tutoriel est constitué d'un nom, du nom de son auteur, préparateur ou demandeur et de la date 
+de publication du tutoriel. Le nom du tutoriel ainsi que celui de son publicateur est cliquable. 
+Le nom du tutoriel est un lien vers le tutoriel tandis que le nom du publicateur filtre les résultats 
+afin de ne garder que les tutoriels du publicateur dans le panneau des résultats. Les tutoriels sont 
+divisés en trois listes selon le rôle joué par le publicateur : demandeur, préparateur ou auteur.
+Le bordereau inférieur offre des contrôles agissant sur le panneau de résultats. Les items du menu
+de navigation inscription et connexion affichent respectivement un formulaire d'inscription et un
+formulaire de connexion.
