@@ -160,14 +160,16 @@ GLOSSAIRE :
 -application monopage
 -design patern store
 
+Description de l'interface utilisateur
+
 CodingPool est une application WEB créer par Cyril Mammar et David Chamont entre 2017-2018.
 Elle est constitué d'une interface utilisateur écrite en Vue.js, un Framework javascript, et
-d'un back-end Flask, un Framework Python.
+d'un back-end en Flask, un Framework Python.
 L'interface nous transporte à la piscine grâce à plusieurs élements graphiques faisant référence
 à cet univers : fond de picine carlé, nageur, plongeur, noyer, bouées(Cf. images). 
 L'interface a été conçu pour être simple et facile d'accès. Elle est constitué d'un bandeau
-supérieur qui comprends le titre de l'application, CodingPool, et des bouées anglais, français.
-Ci-dessous le panneaux de labels et de résultats contenant respectivement des étiquettes et des 
+supérieur qui comprends le titre de l'application, CodingPool, et des bouées anglaise, française.
+Ci-dessous le panneau de labels et de résultats contenant respectivement des étiquettes et des 
 tutoriels. Enfin un bandeau inféreur situé en dessous des panneaux est constitué d'un texte 
 d'information sur le projet et ces acteurs ainsi que du menu de navigation incluant les items : 
 "Inscription" et "Connexion".
@@ -199,3 +201,22 @@ divisés en trois listes selon le rôle joué par le publicateur : demandeur, pr
 Le bordereau inférieur offre des contrôles agissant sur le panneau de résultats. Les items du menu
 de navigation inscription et connexion affichent respectivement un formulaire d'inscription et un
 formulaire de connexion.
+
+Implémentation de l'interface
+
+Comme nous l'avons vu précédement, l'interface utilisateur est écrite en Vue.js. Vue.js est un framework
+javascript basé sur le design patern Model View ViewVModel (MVVM). Ce design patern permet de lier de 
+manière dynamique un modèle et une vue. Ainsi lorsque le modèle est modifié, la vue se met à jour et 
+inversement (binding). 
+L'existant est composé de quartre modèle : header, hierarchy, result, footer qui correspondent 
+respectivement au  bordereau supérieur, panneau de labels, panneau de résultats et bordereau inférieur. 
+Nous retrouvons donc les 4 élements graphiques vue ci-avant. Chacun des modèles à un comportement, 
+les méthodes et des états, les données. L'utilisateur peut modifier l'état du modèle par l'intermédiaire des 
+méthodes qui sont appelées lorsque l'utilisateur déclenche un événement via un élément de l'interface.
+Par exemple l'image du nageur, à gauche d'une étiquette sélectionnable, déclenche la méthodes 
+"add_label_to_old_tab" qui ajoute l'étiquette sélectionnée à la liste "old_labels_tab"
+, liste des labels imposé au tutoriels filtrés. Cette liste est ensuite utilisée par le système pour 
+mettre à jour le modèle result et ainsi afficher uniquement les tutoriels qui correspondent au nouveau
+critère de sélection(cf. schéma pour clarifier tout ça).
+Hors mis ces modèles de l'application monopage, il existe d'autre modèle associé à d'autre page html non
+intégrées au site en production.
