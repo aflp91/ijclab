@@ -32,8 +32,7 @@ Voici la liste exhaustive des fonctionnalités qui requière une communication e
 - authentifier un compte (admin)
 
 
-
-travail à implémenter :
+## Travail à implémenter :
 - l'existant n'utilse pas assez les composants vuejs. Les composants pourraient-être décomposés en sous composants
  indépendants. Regrouper le code en sous composants indépendants augmente la lisibilité, la maintenabilité et 
  la réutilisabilité du code. Les composants existants sont des sortes de couteaux suisses et leur rôle devient
@@ -80,7 +79,7 @@ travail à implémenter :
  - On remarque l'absence de test unitaire. Les tests unitaires garantisse la non régréssion du code. Il servent 
   également de documentation. 
 
-Fonctionnalités :
+## Fonctionnalités CodingPool :
 + interdir un label
 + obliger un label
 + filtrer les tutoriels
@@ -97,7 +96,7 @@ Fonctionnalités :
 - envoie d'e-mail
 - gestion du statut authentifié
 
-interface utilisateur:
+## Interface utilisateur :
 + recherche graphique autour du thème de la piscine
 + fluidité de l'application
 + message d'information de l'API
@@ -157,11 +156,14 @@ Un utilisateur porte les caractristique suivante : id, username, mail, password,
 - cli (init_db)
 
 
-GLOSSAIRE : 
+## GLOSSAIRE : 
+
+ (*à déplacer dans un document autonome*)
+
 - application monopage
 - design patern store
 
-Description de l'interface utilisateur
+## Description de l'interface utilisateur
 
 CodingPool est une application WEB créer par Cyril Mammar et David Chamont entre 2017-2018.
 Elle est constitué d'une interface utilisateur écrite en Vue.js, un Framework javascript, et
@@ -215,7 +217,7 @@ Le bordereau inférieur offre des contrôles agissant sur le panneau de résulta
 de navigation inscription et connexion affichent respectivement un formulaire d'inscription et un
 formulaire de connexion.
 
-Implémentation de l'interface
+## Implémentation de l'interface
 
 Comme nous l'avons vu précédement, l'interface utilisateur est écrite en Vue.js. Vue.js est un framework
 javascript basé sur le design patern Model View ViewVModel (MVVM). Ce design patern permet de lier de 
