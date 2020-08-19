@@ -33,7 +33,25 @@ Voici la liste exhaustive des fonctionnalités qui requière une communication e
 
 
 ## Travail à implémenter :
-- l'existant n'utilse pas assez les composants vuejs. Les composants pourraient-être décomposés en sous composants
+- Structuration des "vue-modèle" et "vue" en un ensemble de composants Vue.js équivalents
+
+- fragmenter l'application CodingPool en deux applications indépendantes front-end et back-end.
+
+- fragmenter le back-end en blueprint indépendantes et réutilisables
+
+- alléger et simplifier les échanges entre le client et le serveur lors du filtrage des tutoriels
+
+- protéger les routes administrateur
+
+- 1. revoir les choix de bibliothèques utilisées.
+  1.1. requêtes ajax : XMLHttpRequest (API built-in javascript) -> axios (API officielle Vue.js)
+  1.2. navigation : barre de navigation et rendu conditionnel -> router (API officielle Vue.js)
+  1.3. stockage de données local : document.cookie (sans API) -> LocalStorage (API de stockage de données)
+  1.4. Bibliothèque css : bibliothèque BootStrap -> BootstrapVue
+
+- 
+
+- l'existant n'utilse pas assez les composants vuejs. [Les composants pourraient-être décomposés en sous composants
  indépendants. Regrouper le code en sous composants indépendants augmente la lisibilité, la maintenabilité et 
  la réutilisabilité du code. Les composants existants sont des sortes de couteaux suisses et leur rôle devient
  incertain. Par exemple, le panneau des résultats affiche les résultats du filtrages des tutoriels, 
@@ -43,7 +61,7 @@ Voici la liste exhaustive des fonctionnalités qui requière une communication e
  graphique (panneau des résultat). L'implémentation a accumulé un grand nombre de rendu conditionnelle sur un même
  composant. Par la suite d'autre fonctionnalité devaient apparaitre dans cette même partie de l'interface mais 
  le développeur à choisi d'abandonner le rendu conditionnel et à créer une nouvelle page html. Le principe 
- d'application monopage n'était plus respecté.
+ d'application monopage n'était plus respecté.]
 
  - L'API permet au client de créer, mettre à jour ou récupérer des données sur le serveur. 
   Ces données concernent différents objet conceptuel de l'application codingpool : 
