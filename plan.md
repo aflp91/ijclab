@@ -2,21 +2,21 @@
 
 ## Contexte
 * Le laboratoire
-* Le service informatique
+* Le service Développement Informatique
 * CodingPool et PSPA
 ## L'existant
-* Ceux qui a été fait avant ma mission d'alternant
+* Ce qui a été fait avant ma mission d'alternant
 ## Besoins
 * Définition des besoins
 ## Gestion de projet
-* Ceux qu'il reste à faire
+* Ce qu'il reste à faire
 * L'organisation du travail
 ## Le résultat
 * Présentation du système
 ### Front-End
 * Vue.js
 #### Conception
-* La méthode AGILE centré utilisateur
+* La méthode AGILE centrée utilisateurs
 * Les maquettes
 #### CodingPool
 * Les composants (architecture, graphismes et fonctionnalités)
