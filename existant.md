@@ -64,20 +64,31 @@ Voici la liste exhaustive des fonctionnalités qui requière une communication e
         - fonctionnalités
     problèmes
         - minimum deux requêtes http pour un résultat
-            -solution
+            -solutions
                 - optimiser les échanges client/serveur
                     - système de filtrage full js
                     - une requête http pour un résultat 
         - manque d'organisation
-            - solution
+            - solutions
                 - blueprint
                 - division en sous projet (labelstower, codeguards)
         - routes administrateur non protéger
             - solution
                 - implémenté un système d'authentification multi-rôle
+        - manque certaine fonctionnalité du cahier des charges
+            - ajout de tutoriel
+            - authentification des utilisateur
+        - choix technologiques
+            - doublon
+                - solution
+                    - choisir entre sqlite3 et sqlalchemy
+            - refaire la roue (système de stockage, gestion des fonctions asynchrone)
+                -solution
+                    - utiliser des technologies éprouvé
         - pas de fichier de configuration [à déplacer]
-- ViewModel
+- Vue-Modèle (ViewModel)
     - instances
+- Vue
 
         
         
