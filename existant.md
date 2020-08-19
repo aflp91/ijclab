@@ -31,17 +31,57 @@ Voici la liste exhaustive des fonctionnalités qui requière une communication e
 - afficher les publications d'un utilisateur donné
 - authentifier un compte (admin)
 
+## Plan de la partie existant
+
+- projet codingpool
+    - definition
+        - catalogue de tutoriels
+        - système de recherche par étiquettes
+        - plateforme de recommandation et de publication de tutoriels
+        - plateforme d'interaction (demande, préparation, publication)
+    - bref historique
+- technologie utilisées
+    - Flask
+        - front-end
+              - templates
+                  - logique
+                      - variable
+                      - itération, condition
+                  - fragment
+        - back-end
+            - routes
+            - blueprint
+        - extension
+            - flask_sqlalchemy
+            - flask_login
+            - flask_mail
+        - MVC
+            - definition
+            - alternative API
+    - Vue
+        - framework front-end
+        
+        
+        
+
+            
 
 ## Travail à implémenter :
-- Structuration des "vue-modèle" et "vue" en un ensemble de composants Vue.js équivalents
+- réaliser des tests unitaires sur les composants
 
-- fragmenter l'application CodingPool en deux applications indépendantes front-end et back-end.
+- diviser l'interface graphique en un ensemble de composants
+
+- implement single file component patern
+
+- fragmenter l'application CodingPool en deux applications indépendantes front-end et back-end
 
 - fragmenter le back-end en blueprint indépendantes et réutilisables
     - authentification
     - système de filtrage
 
 - alléger et simplifier les échanges entre le client et le serveur lors du filtrage des tutoriels
+    - design patern store
+    - réécriture du système de tri par étiquette
 
 - protéger les routes administrateur
 
