@@ -42,24 +42,43 @@ Voici la liste exhaustive des fonctionnalités qui requière une communication e
     - bref historique
 - technologie utilisées
     - Flask
-        - front-end
-              - templates
-                  - logique
-                      - variable
-                      - itération, condition
-                  - fragment
-        - back-end
-            - routes
-            - blueprint
-        - extension
-            - flask_sqlalchemy
-            - flask_login
-            - flask_mail
+        - micro framework
+        - fullstack
         - MVC
-            - definition
-            - alternative API
     - Vue
         - framework front-end
+        - MVVM
+- Architecture
+    - mix MVVM et MVC
+- Le Modèle
+    - étiquette
+        - hierarchie
+        - association tutoriel/étiquette
+    - tutoriel
+    - utilisateur
+    - alias
+        - maintenabilité du système d'étiquette
+    - schéma
+        - présentation
+    - méthodes
+        - fonctionnalités
+    problèmes
+        - minimum deux requêtes http pour un résultat
+            -solution
+                - optimiser les échanges client/serveur
+                    - système de filtrage full js
+                    - une requête http pour un résultat 
+        - manque d'organisation
+            - solution
+                - blueprint
+                - division en sous projet (labelstower, codeguards)
+        - routes administrateur non protéger
+            - solution
+                - implémenté un système d'authentification multi-rôle
+        - pas de fichier de configuration [à déplacer]
+- ViewModel
+    - instances
+
         
         
         
@@ -74,6 +93,8 @@ Voici la liste exhaustive des fonctionnalités qui requière une communication e
 - implement single file component patern
 
 - fragmenter l'application CodingPool en deux applications indépendantes front-end et back-end
+
+- implémenter l'objet blueprint
 
 - fragmenter le back-end en blueprint indépendantes et réutilisables
     - authentification
@@ -90,6 +111,7 @@ Voici la liste exhaustive des fonctionnalités qui requière une communication e
      - navigation : barre de navigation et rendu conditionnel -> router (API officielle Vue.js)
      - stockage de données local : document.cookie (sans API) -> LocalStorage (API de stockage de données)
      - Bibliothèque css : bibliothèque BootStrap -> BootstrapVue
+     - résultat de fonction asynchrone : fonction local "update_loading" -> Promise (built-in js classe)
 
 
 - l'existant n'utilse pas assez les composants vuejs. [Les composants pourraient-être décomposés en sous composants
