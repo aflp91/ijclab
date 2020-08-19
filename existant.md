@@ -22,19 +22,19 @@ critiques
 
 
 Voici la liste exhaustive des fonctionnalités qui requière une communication entre le CLIENT et le SERVEUR :
--obtenir un jeu de tutoriels et leur étiquettes discriminantes de plus haut niveau
--filtrer les tutoriels
--créer un compte utilisateur
--se connecter à un compte utilisateur
--éditer la hiérarchie des labels
--ajouter un tutoriel dans la base de données
--afficher les publications d'un utilisateur donné
--authentifier un compte (admin)
+- obtenir un jeu de tutoriels et leur étiquettes discriminantes de plus haut niveau
+- filtrer les tutoriels
+- créer un compte utilisateur
+- se connecter à un compte utilisateur
+- éditer la hiérarchie des labels
+- ajouter un tutoriel dans la base de données
+- afficher les publications d'un utilisateur donné
+- authentifier un compte (admin)
 
 
 
 travail à implémenter :
--l'existant n'utilse pas assez les composants vuejs. Les composants pourraient-être décomposés en sous composants
+- l'existant n'utilse pas assez les composants vuejs. Les composants pourraient-être décomposés en sous composants
  indépendants. Regrouper le code en sous composants indépendants augmente la lisibilité, la maintenabilité et 
  la réutilisabilité du code. Les composants existants sont des sortes de couteaux suisses et leur rôle devient
  incertain. Par exemple, le panneau des résultats affiche les résultats du filtrages des tutoriels, 
@@ -46,7 +46,7 @@ travail à implémenter :
  le développeur à choisi d'abandonner le rendu conditionnel et à créer une nouvelle page html. Le principe 
  d'application monopage n'était plus respecté.
 
- -L'API permet au client de créer, mettre à jour ou récupérer des données sur le serveur. 
+ - L'API permet au client de créer, mettre à jour ou récupérer des données sur le serveur. 
   Ces données concernent différents objet conceptuel de l'application codingpool : 
   les étiquettes, les tutoriels, les utilisateur.
   Les données sont renvoyés dans le format JavaScript Notation Object (JSON). Ce format est 
@@ -62,22 +62,22 @@ travail à implémenter :
   Ce design patern a des inconvénients. Le téléchargement de l'ensemble des données du serveur peut-être long
   et les données téléchargées sur le client peuvent ne plus être à jour. 
 
--A l'origine codingpool devait réutiliser un projet, labelstower, qui implémente le système de tri par étiquette.
+- A l'origine codingpool devait réutiliser un projet, labelstower, qui implémente le système de tri par étiquette.
  Au cours du développement labelstower a fusionné avec codingpool. Les fonctionnalités de labelstower n'était
  plus distingeable du reste de l'application. Nous devrons donc isolé les fonctionnalités du tri par étiquette et
  le distribuer sous la forme d'un module python.  
  Dans le contexte de création de module nous avons décidé d'isolé le front du back. L'interface graphique étant 
  propre à chaque projet l'intérêt de distribuer une interface avec la distribution labelstower est nulle.
 
- -L'existant propose déjà une charte graphique élaborer sur le de la piscine ainsi qu'une structure globale de
+ - L'existant propose déjà une charte graphique élaborer sur le de la piscine ainsi qu'une structure globale de
  l'interface graphique. Nous pourrons réutiliser la charte graphique ainsi que la structure proposée.
 
- -La base de données de l'application existante n'est pas une base de données relationnelle. Elle n'utilise pas 
+ - La base de données de l'application existante n'est pas une base de données relationnelle. Elle n'utilise pas 
  les contraintes de clés étrangères. Le schéma de la base de données devra intégrer la contrainte de clé étrnagère
  pour garantir la pertinence des données. Par ailleurs, la base de données contient des informations qu'il faudra 
  intégrer à la nouvelle base de données.
 
- -On remarque l'absence de test unitaire. Les tests unitaires garantisse la non régréssion du code. Il servent 
+ - On remarque l'absence de test unitaire. Les tests unitaires garantisse la non régréssion du code. Il servent 
   également de documentation. 
 
 Fonctionnalités :
@@ -132,72 +132,85 @@ utilisateur, il pourra y accèder en s'identifiant grâce à son mail et mot de 
 
 Un utilisateur porte les caractristique suivante : id, username, mail, password, authenticated.
 
--L'application n'est pas fonctionnelle. login_manager n'est pas implémenté.
+- L'application n'est pas fonctionnelle. login_manager n'est pas implémenté.
 
--L'aplication CodeGuards suit l'architecture CLIENT/SERVEUR. Le serveur 
+- L'aplication CodeGuards suit l'architecture CLIENT/SERVEUR. Le serveur 
 
- -Il existe trois statuts d'utilisateur
-  enregistrés : l'utilisateur a été enregistré dans la base de données.
-  authentifiés : l'utilisateur a authentifié son adresse électronique
-  administrateurs : l'utilisateur fait parti de la liste des administrateurs.
+- Il existe trois statuts d'utilisateur
+  + enregistrés : l'utilisateur a été enregistré dans la base de données.
+  + authentifiés : l'utilisateur a authentifié son adresse électronique
+  + administrateurs : l'utilisateur fait parti de la liste des administrateurs.
+  
   Pour rendre plus explicite les différents rôles de l'utilisateur, nous allons les formaliser dans la 
   base de données. Chaque utilisateur sera associé à un rôle qui évoluera. Des droits d'accès seront 
   attribuées à chacun de ces groupes.
 
 
--Démarrage de l'application avec un environnemeent virtuel.
+- Démarrage de l'application avec un environnemeent virtuel.
 
--dépendance : flask, flask-mail, jinja, flask-login, chryptography, sqlalchemy
+- dépendance : flask, flask-mail, jinja, flask-login, chryptography, sqlalchemy
 
--base de données : post, user
+- base de données : post, user
 
--blueprint : auth, 
+- blueprint : auth, 
 
--cli (init_db)
+- cli (init_db)
 
 
 GLOSSAIRE : 
--application monopage
--design patern store
+- application monopage
+- design patern store
 
 Description de l'interface utilisateur
 
 CodingPool est une application WEB créer par Cyril Mammar et David Chamont entre 2017-2018.
 Elle est constitué d'une interface utilisateur écrite en Vue.js, un Framework javascript, et
 d'un back-end en Flask, un Framework Python.
+
 L'interface nous transporte à la piscine grâce à plusieurs élements graphiques faisant référence
 à cet univers : fond de picine carlé, nageur, plongeur, noyer, bouées(Cf. images). 
+
 L'interface a été conçu pour être simple et facile d'accès. Elle est constitué d'un bandeau
 supérieur qui comprends le titre de l'application, CodingPool, et des bouées anglaise, française.
 Ci-dessous le panneau de labels et de résultats contenant respectivement des étiquettes et des 
 tutoriels. Enfin un bandeau inféreur situé en dessous des panneaux est constitué d'un texte 
 d'information sur le projet et ces acteurs ainsi que du menu de navigation incluant les items : 
 "Inscription" et "Connexion".
+
 L'utilisateur peut interagir avec l'ensemble de ses éléments graphiques grâce à la souris. Nous 
 détaillerons l'ensemble des interactions ci-après. Nous reviendrons également sur les panneaux
 de labels et résultats peu détaillé jusqu'à présent.
+
 Le bandeau supérieur offre des contrôles qui agissent sur l'ensemble de la page.
 L'utilisateur peut rafraichir la page ou modifier la langue du site en cliquant respectivement
 sur le titre ou les bouées américaines et française.
+
 Les panneaux de labels et résultats sont les principaux éléments de l'interface.
 Le panneaux de labels est constitué d'une liste d'étiquettes sélectionnables. Chaque étiquette
 porte un nom et est sélectionnable en cliquant sur l'image du nageur ou du noyer. L'image du 
 nageur permet de rendre obligatoire l'étiquette sélectionnée tandis que l'image du noyer interdit
 l'étiquette sélectionnée.
+
 Les sélections de l'utilisateur apparaissent dans une liste, la liste des étiquette sélectionnées,
 au-dessus de la liste des étiquettes sélectionnables. Chaque étiquette sélectionnée porte un nom et
 l'image correspondant au type de sélection. Les étiquettes sélectionnées sont déselectionnées en 
 cliquant sur l'image du nageur pour les étiquettes rendu obligatoire ou en cliquant sur l'image du 
 noyer pour les étiquettes interdites.
+
 Le panneau de résultats est polymorphe. Par défaut c'est la liste des tutoriels résultant des 
 opérations de filtrage effectué avec les étiquettes du panneau de labels. Regardons de plus près
 la constitutions d'un tutoriel dans un premier temps puis nous nous interesserons aux différents 
 résultats affichés dans le panneau de résultats par la suite.
+
 Chaque tutoriel est constitué d'un nom, du nom de son auteur, préparateur ou demandeur et de la date 
 de publication du tutoriel. Le nom du tutoriel ainsi que celui de son publicateur est cliquable. 
 Le nom du tutoriel est un lien vers le tutoriel tandis que le nom du publicateur filtre les résultats 
 afin de ne garder que les tutoriels du publicateur dans le panneau des résultats. Les tutoriels sont 
-divisés en trois listes selon le rôle joué par le publicateur : demandeur, préparateur ou auteur.
+divisés en trois listes selon le rôle joué par le publicateur : 
+   + demandeur, 
+   + préparateur ou 
+   + auteur.
+
 Le bordereau inférieur offre des contrôles agissant sur le panneau de résultats. Les items du menu
 de navigation inscription et connexion affichent respectivement un formulaire d'inscription et un
 formulaire de connexion.
@@ -208,6 +221,7 @@ Comme nous l'avons vu précédement, l'interface utilisateur est écrite en Vue.
 javascript basé sur le design patern Model View ViewVModel (MVVM). Ce design patern permet de lier de 
 manière dynamique un modèle et une vue. Ainsi lorsque le modèle est modifié, la vue se met à jour et 
 inversement (binding). 
+
 L'existant est composé de quartre modèle : header, hierarchy, result, footer qui correspondent 
 respectivement au  bordereau supérieur, panneau de labels, panneau de résultats et bordereau inférieur. 
 Nous retrouvons donc les 4 élements graphiques vue ci-avant. Chacun des modèles à un comportement, 
@@ -218,5 +232,6 @@ Par exemple l'image du nageur, à gauche d'une étiquette sélectionnable, décl
 , liste des labels imposé au tutoriels filtrés. Cette liste est ensuite utilisée par le système pour 
 mettre à jour le modèle result et ainsi afficher uniquement les tutoriels qui correspondent au nouveau
 critère de sélection(cf. schéma pour clarifier tout ça).
+
 Hors mis ces modèles de l'application monopage, il existe d'autre modèle associé à d'autre page html non
 intégrées au site en production.
