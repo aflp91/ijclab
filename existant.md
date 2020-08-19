@@ -38,18 +38,19 @@ Voici la liste exhaustive des fonctionnalités qui requière une communication e
 - fragmenter l'application CodingPool en deux applications indépendantes front-end et back-end.
 
 - fragmenter le back-end en blueprint indépendantes et réutilisables
+    - authentification
+    - système de filtrage
 
 - alléger et simplifier les échanges entre le client et le serveur lors du filtrage des tutoriels
 
 - protéger les routes administrateur
 
-- 1. revoir les choix de bibliothèques utilisées.
-  1.1. requêtes ajax : XMLHttpRequest (API built-in javascript) -> axios (API officielle Vue.js)
-  1.2. navigation : barre de navigation et rendu conditionnel -> router (API officielle Vue.js)
-  1.3. stockage de données local : document.cookie (sans API) -> LocalStorage (API de stockage de données)
-  1.4. Bibliothèque css : bibliothèque BootStrap -> BootstrapVue
+- revoir les choix de bibliothèques utilisées.
+     - requêtes ajax : XMLHttpRequest (API built-in javascript) -> axios (API officielle Vue.js)
+     - navigation : barre de navigation et rendu conditionnel -> router (API officielle Vue.js)
+     - stockage de données local : document.cookie (sans API) -> LocalStorage (API de stockage de données)
+     - Bibliothèque css : bibliothèque BootStrap -> BootstrapVue
 
-- 
 
 - l'existant n'utilse pas assez les composants vuejs. [Les composants pourraient-être décomposés en sous composants
  indépendants. Regrouper le code en sous composants indépendants augmente la lisibilité, la maintenabilité et 
