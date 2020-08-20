@@ -20,6 +20,10 @@
     + Programmation événementielle
 
 - L'environnement technologique
+    + gestion de projet
+        * outil de gestion de version
+        * forge
+        * containeurisation
     + back-end : Flask
         * micro framework Python
         * fullstack
