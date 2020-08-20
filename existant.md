@@ -45,8 +45,10 @@ Voici la liste exhaustive des fonctionnalités qui requière une communication e
         - Flask
             - micro framework
             - fullstack
-            - MVC
-            - API
+            - architectures courantes
+                - MVC
+                - API Rest
+                - SPA
     -front-end
         - Navigateur
             - Page WEB
