@@ -33,109 +33,113 @@ Voici la liste exhaustive des fonctionnalités qui requière une communication e
 
 ## Plan de la partie existant
 
-- projet codingpool
-    - definition
-        - catalogue de tutoriels
-        - système de recherche par étiquettes
-        - plateforme de recommandation et de publication de tutoriels
-        - plateforme d'interaction (demande, préparation, publication)
-    - bref historique
-- environnement technologique
-    - back-end
-        - Flask
-            - micro framework
-            - fullstack
-            - architectures courantes
-                - MVC
-                - API Rest
-                - SPA
-    -front-end
-        - Navigateur
-            - Page WEB
-                - Les trois couches 
-                    - HTML
-                    - CSS
-                    - Javascript
-                - DOM
-        - Vue
-            - framework front-end
-            - MVVM
+- Le projet codingpool
+    + definition
+        * catalogue de tutoriels
+        * système de recherche par étiquettes
+        * plateforme de recommandation et de publication de tutoriels
+        * plateforme d'interaction (demande, préparation, publication)
+    + bref historique
+        * qui
+        * quand
+        * combien de temps
+
+- Application WEB
+    + Les trois couches 
+        * HTML
+        * CSS
+        * Javascript
+    + DOM
+    + Programmation événementielle
+
+- L'environnement technologique
+    + back-end : Flask
+        * micro framework Python
+        * fullstack
+        * architecture courante
+            - MVC
+            - API Rest
+            - SPA
+    + front-end : Vue
+        * framework JavaScript
+        * MVVM
+
 - Architecture
-    - front : MVVM et back-end : SPA (single page+JSON)
-    - CRUD
-- côté serveur
-    - Modèle
-        - étiquette
+    + front-end : MVVM 
+    + back-end : SPA (single page+JSON)
+    + CRUD
+
+- Implémentation côté serveur
+    + Modèle
+        * étiquette
             - hierarchie
             - association tutoriel/étiquette
-        - tutoriel
-        - utilisateur
-        - alias
+        * tutoriel
+        * utilisateur
+        * alias
             - maintenabilité du système d'étiquette
-        - schéma
+        * schéma
             - présentation
-        - méthodes
+        * méthodes
             - fonctionnalités
-    - Contrôleur
-        - fonctionnement
-            - associer des fonctions à des URL (routes)
-            - exemple : fichier codingpool.py qui contient toutes les routes de l'application
-        problèmes
-            - minimum deux requêtes http pour un résultat
-                -solutions
-                    - optimiser les échanges client/serveur
-                        - système de filtrage full js
-                        - une requête http pour un résultat 
-            - manque d'organisation
-                - solutions
-                    - blueprint
-                    - division en sous projet (labelstower, codeguards)
-            - routes administrateur non protéger
-                - solution
-                    - implémenté un système d'authentification multi-rôle
-            - manque certaine fonctionnalité du cahier des charges
-                - ajout de tutoriel
-                - authentification des utilisateur
-            - choix technologiques
-                - doublon
-                    - solution
-                        - choisir entre sqlite3 et sqlalchemy
-                - refaire la roue (système de stockage, gestion des fonctions asynchrone)
-                    -solution
-                        - utiliser des technologies éprouvé
+    
+    + Contrôleur
+        * fonctionnement
+            - associer les fonctionnalités à des requêtes sous forme d'URL (routes)
+            - exemple : fichier `codingpool.py` qui contient toutes les routes de l'application
+     
+    + Problèmes adressés
+        * minimum deux requêtes http pour un résultat
+            - solution : optimiser les échanges client/serveur
+                + système de filtrage en JavaScript
+                + une requête HTTP pour un résultat 
+        * manquait d'organisation/structuration
+            - solutions
+                + blueprint
+                + organisation en sous projet (labelstower, codeguards)
+        * routes administrateur non protégées
+            - solution
+                + implémenté un système d'authentification multi-rôle
+        * manquait certaines fonctionnalités du cahier des charges
+            - ajout de tutoriel
+            - authentification des utilisateur
+        * quelques choix technologiques discutables
+            - doublon d'accès à la BdD
+                + solution
+                    - choisir entre sqlite3 et sqlalchemy
+            - refaire la roue (système de stockage, gestion des fonctions asynchrones)
+                + solution
+                    - utiliser des technologies éprouvées
             - pas de fichier de configuration [à déplacer]
-- côté client
-    - Modèle (M dans M.V.VM, Model View ViewModel)
-        - les données récupérer et enregistrer dans le model client
-            - les instances de Vue (header, footer, hierarchy, result) et leur modèle
-                - hierarchy
-                - result
-        - communication avec le serveur
+
+- Implémentation côté client
+    
+    + Modèle (M dans M.V.VM, Model View ViewModel)
+        * les données récupérées et enregistrées dans le model client
+        * les instances de Vue (`header`, `footer`, `hierarchy`, `result`) et leur modèle
+            - `hierarchy`
+            - `result`
+        * communication avec le serveur
              - HttpRequest
              - JSON response
-    - problème
-        - architecture
+    + Problème
+        * architecture
             - absence d'utilisation des composants
-            - is_login gérer dans plusieurs instance de Vue (result, footer)
-                - solution
-                    - mieux définir les rôles de chaque instances
-                    - communiquer l'état de is_login à result si besoin
+            - `is_login` géré dans plusieurs instance de Vue.js (`result`, `footer`)
+                + mieux définir les rôles de chaque instance
+                + communiquer l'état de `is_login` à `result` si besoin
             - script d'initialisation
-                    - solution
-                        - utiliser les life cycle hook des instance vue js
-        - gestion des fonction asynchrone
+                 + utiliser les `life cycle hook` des instance Vue.js
+        * gestion des fonctions asynchrones
              - solution
                  - utilisé l'objet Promise
-    - Vue (V dans M.V.VM, Model View ViewModel)
-        - html -> DOM -> point de montage des vues
-
-programmation événementielle [à intégrer côté client]
-
+    + Vue (V dans M.V.VM, Model View ViewModel)
+    
+        * html -> DOM -> point de montage des vues
         
-        
-        
+          Reprendre une implémentation monolitique en composants logiques
 
-            
+
 
 ## Travail à implémenter :
 - réaliser des tests unitaires sur les composants
