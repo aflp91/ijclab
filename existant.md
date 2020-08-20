@@ -40,16 +40,27 @@ Voici la liste exhaustive des fonctionnalités qui requière une communication e
         - plateforme de recommandation et de publication de tutoriels
         - plateforme d'interaction (demande, préparation, publication)
     - bref historique
-- technologie utilisées
-    - Flask
-        - micro framework
-        - fullstack
-        - MVC
-    - Vue
-        - framework front-end
-        - MVVM
+- environnement technologique
+    - back-end
+        - Flask
+            - micro framework
+            - fullstack
+            - MVC
+            - API
+    -front-end
+        - Navigateur
+            - Page WEB
+                - Les trois couches 
+                    - HTML
+                    - CSS
+                    - Javascript
+                - DOM
+        - Vue
+            - framework front-end
+            - MVVM
 - Architecture
-    - mix MVVM et MVC
+    - front : MVVM et back-end : SPA (single page+JSON)
+    - CRUD
 - côté serveur
     - Modèle
         - étiquette
@@ -113,9 +124,10 @@ Voici la liste exhaustive des fonctionnalités qui requière une communication e
         - gestion des fonction asynchrone
              - solution
                  - utilisé l'objet Promise
-        
-
     - Vue (V dans M.V.VM, Model View ViewModel)
+        - html -> DOM -> point de montage des vues
+
+programmation événementielle [à intégrer côté client]
 
         
         
