@@ -50,45 +50,72 @@ Voici la liste exhaustive des fonctionnalités qui requière une communication e
         - MVVM
 - Architecture
     - mix MVVM et MVC
-- Le Modèle
-    - étiquette
-        - hierarchie
-        - association tutoriel/étiquette
-    - tutoriel
-    - utilisateur
-    - alias
-        - maintenabilité du système d'étiquette
-    - schéma
-        - présentation
-    - méthodes
-        - fonctionnalités
-    problèmes
-        - minimum deux requêtes http pour un résultat
-            -solutions
-                - optimiser les échanges client/serveur
-                    - système de filtrage full js
-                    - une requête http pour un résultat 
-        - manque d'organisation
-            - solutions
-                - blueprint
-                - division en sous projet (labelstower, codeguards)
-        - routes administrateur non protéger
-            - solution
-                - implémenté un système d'authentification multi-rôle
-        - manque certaine fonctionnalité du cahier des charges
-            - ajout de tutoriel
-            - authentification des utilisateur
-        - choix technologiques
-            - doublon
+- côté serveur
+    - Modèle
+        - étiquette
+            - hierarchie
+            - association tutoriel/étiquette
+        - tutoriel
+        - utilisateur
+        - alias
+            - maintenabilité du système d'étiquette
+        - schéma
+            - présentation
+        - méthodes
+            - fonctionnalités
+    - Contrôleur
+        - fonctionnement
+            - associer des fonctions à des URL (routes)
+            - exemple : fichier codingpool.py qui contient toutes les routes de l'application
+        problèmes
+            - minimum deux requêtes http pour un résultat
+                -solutions
+                    - optimiser les échanges client/serveur
+                        - système de filtrage full js
+                        - une requête http pour un résultat 
+            - manque d'organisation
+                - solutions
+                    - blueprint
+                    - division en sous projet (labelstower, codeguards)
+            - routes administrateur non protéger
                 - solution
-                    - choisir entre sqlite3 et sqlalchemy
-            - refaire la roue (système de stockage, gestion des fonctions asynchrone)
-                -solution
-                    - utiliser des technologies éprouvé
-        - pas de fichier de configuration [à déplacer]
-- Vue-Modèle (ViewModel)
-    - instances
-- Vue
+                    - implémenté un système d'authentification multi-rôle
+            - manque certaine fonctionnalité du cahier des charges
+                - ajout de tutoriel
+                - authentification des utilisateur
+            - choix technologiques
+                - doublon
+                    - solution
+                        - choisir entre sqlite3 et sqlalchemy
+                - refaire la roue (système de stockage, gestion des fonctions asynchrone)
+                    -solution
+                        - utiliser des technologies éprouvé
+            - pas de fichier de configuration [à déplacer]
+- côté client
+    - Modèle (M dans M.V.VM, Model View ViewModel)
+        - les données récupérer et enregistrer dans le model client
+            - les instances de Vue (header, footer, hierarchy, result) et leur modèle
+                - hierarchy
+                - result
+        - communication avec le serveur
+             - HttpRequest
+             - JSON response
+    - problème
+        - architecture
+            - absence d'utilisation des composants
+            - is_login gérer dans plusieurs instance de Vue (result, footer)
+                - solution
+                    - mieux définir les rôles de chaque instances
+                    - communiquer l'état de is_login à result si besoin
+            - script d'initialisation
+                    - solution
+                        - utiliser les life cycle hook des instance vue js
+        - gestion des fonction asynchrone
+             - solution
+                 - utilisé l'objet Promise
+        
+
+    - Vue (V dans M.V.VM, Model View ViewModel)
 
         
         
