@@ -9,7 +9,7 @@
 * Analyse de l'existant
 ## Refactoring de l'application codingpool
 * Développement d'un nouveau front-end
-* Refactoring de l'API CodingPool
+* Refactoring de l'API
 * Intégration du du back-end avec le front-end
 ## Bilan de l'apprentissage
 * Avancement du projet
