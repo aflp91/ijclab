@@ -7,7 +7,7 @@
 * Définition
 * Environnement
 * Analyse de l'existant
-# refactoring de l'application codingpool
+## Refactoring de l'application codingpool
 * Développement d'un nouveau front-end
 * Refactoring de l'API CodingPool
 * Intégration du du back-end avec le front-end
